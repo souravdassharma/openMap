@@ -1,5 +1,6 @@
 package execute;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -44,6 +45,11 @@ public static List<String> camMenu = new ArrayList<String>(Arrays.asList(""));
 		HSSFWorkbook wrkbk = HSSFWorkbook.create(InternalWorkbook.createWorkbook());
 		int j;
 		
+		String directoryName = "./screenshots";
+		File directory = new File(directoryName);
+		    if (!directory.exists()){
+		        directory.mkdir();
+		    }	
 	
 		 try { 
 			 Browser.setup(); 
